@@ -1,0 +1,41 @@
+// Vars
+$ff-primary: sans-serif;
+$primary: #2d66e0;
+$secondary: #ccc;
+$thirdary: #aaa;
+$danger: #972323;
+
+
+// ---
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $ff-primary;
+}
+
+.center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn{
+  all: unset;
+  cursor: pointer;
+  background-color: $thirdary;
+  text-align: center;
+  padding: .5rem 1rem;
+  color: #000;
+
+  &.btn-primary{
+    background-color: $primary;
+    color: #fff;
+  }
+
+  &.btn-danger{
+    background-color: $danger;
+    color: #fff;
+  }
+}

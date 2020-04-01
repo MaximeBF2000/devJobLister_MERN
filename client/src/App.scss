@@ -1,0 +1,233 @@
+@import "./scss/config.scss";
+
+
+
+header{
+  background-color: $secondary;
+
+  nav{
+    display: flex;
+    padding: .8rem 1rem;
+    justify-content: space-between;
+  }
+
+  .logo{
+    font-size: xx-large;
+  }
+}
+
+.flashSent{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline;
+  font-size: large;
+  padding: 1.3rem 3rem;
+  background-color: rgba(63, 177, 63, 0.6);
+}
+
+.flashDelete{
+  @extend .flashSent;
+  background-color: rgba(206, 30, 30, 0.6);
+}
+
+.flashWrongPass{
+  position: absolute;
+  top: 0;
+  padding: 1.3rem 3rem;
+  font-size: large;
+  background-color: rgba(206, 30, 30, 0.6);
+}
+
+.popupBackground{
+  @extend .center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #222222b3;
+
+  .popupPostContainer{
+    position: relative;
+    width: 35%;
+    height: 98%;
+    background-color: #fff;
+    padding: 2rem;
+    text-align: center;
+
+    textarea{
+      overflow: hidden;
+    }
+  }
+
+  .popupInfoContainer{
+    position: relative;
+    width: 40%;
+    height: 98%;
+    padding: 0 1rem;
+    background-color: #fff;
+    overflow-x: hidden;
+
+    h2{
+      margin: 1.5rem 0 4rem 0;
+      text-align: center;
+    }
+
+    .infoDescription{
+      overflow: scroll;
+      overflow-x: hidden;
+      height: 300px;
+
+      &::-webkit-scrollbar{
+        width: 2px;
+        background-color: rgba(34, 34, 34, .3);
+      }
+      &::-webkit-scrollbar-thumb{
+        background-color: rgb(34, 34, 34);
+      }
+    }
+
+    .infoContact{
+      position: absolute;
+      left: 50%;
+      bottom: .5rem;
+      transform: translateX(-50%);
+      width: 90%;
+      text-align: center;
+      border: dashed 1px grey;
+
+      h3{
+        padding: .5rem 0;
+        border-bottom: 1px dashed grey;
+      }
+      p{
+        padding: 2rem 0;
+      }
+    }
+  }
+
+  .popupDeleteContainer{
+    position: relative;
+    width: 35%;
+    background-color: #fff;
+    padding: 2rem;
+    text-align: center;
+
+    input{
+      margin: 1rem 0;
+      font-size: large;
+    }
+
+    .btn-danger{
+      width: 20%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  h2{
+    margin-bottom: 2rem;
+  }
+
+  .exitBtn{
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: solid 1px grey;
+  }
+
+  #jobForm{
+
+    .form-group{
+      display: flex;
+      flex-direction: column;
+
+      label{
+        margin-bottom: .3rem;
+      }
+
+      input{
+        margin-bottom: .8rem;
+        font-size: large;
+      }
+
+      button{
+        position: absolute;
+        bottom: 0;
+      }
+
+    }
+  }
+}
+
+#searchform{
+  width: 40%;
+  margin: 2rem auto 4rem auto;
+  display: flex;
+  flex-direction: column;
+
+  label{
+    text-align: center;
+    font-size: x-large;
+    margin-bottom: 1rem;
+  }
+
+  input[type="text"]{
+    margin-bottom: .5rem;
+    padding: .2rem .4rem;
+    font-size: large;
+
+    &::placeholder{
+      font-size: medium;
+    }
+  }
+
+  input[type="submit"]{
+
+  }
+}
+
+.jobs{
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.nojobfound{
+  width: 100%;
+  font-style: italic;
+  font-size: large;
+  text-align: center;
+}
+
+.job{
+  margin: 0 20px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 1px grey;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .5rem 0;
+
+  .title{
+    font-weight: bold;
+    font-size: large;
+  }
+
+  .compagny{
+    margin-bottom: .4rem;
+    font-style: italic;
+  }
+
+  .infos{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn{
+    margin-top: .5rem;
+  }
+}
