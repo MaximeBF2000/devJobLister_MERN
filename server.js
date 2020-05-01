@@ -3,6 +3,7 @@ const app = express()
 const connectToDb = require("./dbConnect")
 const Job = require("./models/Job")
 const jobRouter = require("./routes/jobs")
+const path = require("path")
 
 require("dotenv").config()
 
@@ -23,7 +24,7 @@ if(process.env.NODE_ENV === "production"){
   app.use(express.static("client/build"))
 
   app.get("*", (req, res) => {
-    res.sendFile("client/build/index.html")
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
   })
 }
 
